@@ -1,12 +1,15 @@
 const ulList = document.createElement('ul');
 document.body.appendChild(ulList);
 
-const numberLi = 3;
+let number = 3;
 
-for (let i = 1; i <= numberLi; i++) {
+// ulList.appendChild(liItem).textContent = 1;
+
+for (let i = 1; i <= number; i++) {
     
     const liItem = document.createElement('li');
     ulList.appendChild(liItem).textContent = i;
+    
 }
 
-const lastLi = document.querySelector('li:last-child').textContent = 'Ostatni element';
+const lastLiEl = document.querySelector('li:last-child').textContent = 'Ostatni element';

@@ -1,16 +1,21 @@
-const addCl = document.querySelector('.btn1');
-const removeCl = document.querySelector('.btn2');
-const textP = document.querySelector('p');
+const btn1 = document.querySelector('.btn1');
+const btn2 = document.querySelector('.btn2');
+const text = document.querySelector('p');
 
 
-addCl.addEventListener('click', function () {
-    textP.classList.add('show');
-    textP.classList.remove('hide');
-});
+const showTextFun = () => {
+    text.classList.add('show');
+    text.classList.remove('hide');
+};
 
-removeCl.addEventListener('click', function () {
-    textP.classList.add('hide');
-    textP.classList.remove('show');
-});
+btn1.addEventListener('click', showTextFun);
+
+
+const hideTextFun = () => {
+    text.classList.add('hide');
+    text.classList.remove('show');
+} ;
+
+btn2.addEventListener('click', hideTextFun);
 
 
