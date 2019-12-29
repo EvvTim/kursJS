@@ -9,6 +9,7 @@ const two = document.querySelector('.two');
 let frh;
 let cel;
 
+
 const swap = () => {
     if (one.innerText === '°C') {
         one.innerText = '°F';
