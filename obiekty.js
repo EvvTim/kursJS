@@ -6,6 +6,10 @@ const newUser = {
         brand: 'Dolan',
         color: 'Grey',
         year: 2018,
+
+        sound () {
+            console.log('ding ding');
+        }
     }
 }
 
