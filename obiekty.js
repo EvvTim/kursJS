@@ -8,7 +8,7 @@ const newUser = {
         year: 2018,
 
         sound () {
-            console.log('ding ding');
+            console.log('ding ding ding');
         }
     }
 }
