@@ -17,6 +17,7 @@ const dog = {
     
 }
 
+
 console.log(dog.name);
 console.log(dog.age);
 
