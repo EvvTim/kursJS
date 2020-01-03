@@ -1,26 +1,11 @@
-// const name = 'Drops';
-// const age = 5;
+//  this 
 
-// const dog = {
-//     name: name,
-//     age: age,
-//     // klucz : wartość
-// }
-
-
-const name = 'Drops';
-const age = 5;
-
-const dog = {
-    name,
-    age
-    
+const user = {
+    name : 'Zhenia',
+    test () {
+        console.log(this);
+        console.log(this.name);
+    }
 }
 
-
-console.log(dog.name);
-console.log(dog.age);
-
-
-delete dog.age;
-console.log(dog);
+user.test();
