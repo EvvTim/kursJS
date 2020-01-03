@@ -14,4 +14,5 @@ const newUser = {
 }
 
 
+
 console.log(`${newUser.name} jezdzi rowerem marki ${newUser.bike.brand} :P`);
