@@ -1,11 +1,18 @@
-//  this 
+// konstrukror
 
-const user = {
-    name : 'Zhenia',
-    test () {
-        console.log(this);
-        console.log(this.name);
-    }
+function User(name, age) {
+    this.name = name;
+    this.age = age;
+
+    // this.hello = function () {
+    //     console.log(`Użytkownik ma na imię ${this.name} i ma ${this.age} lat`);
+    // }
 }
 
-user.test();
+User.prototype.hello = function () {
+    console.log(`Użytkownik ma na imię ${this.name} i ma ${this.age} lat`);
+}
+
+const newUser = new User('Zhenia', 25);
+
+newUser.hello()
