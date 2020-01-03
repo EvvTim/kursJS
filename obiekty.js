@@ -1,10 +1,25 @@
-const user = {
-    name: 'Zhenia',
-    age: 25,
+// const name = 'Drops';
+// const age = 5;
 
+// const dog = {
+//     name: name,
+//     age: age,
+//     // klucz : wartość
+// }
+
+
+const name = 'Drops';
+const age = 5;
+
+const dog = {
+    name,
+    age
+    
 }
 
-user.country = 'Białoruś';
-user['fav-color'] = 'black';
+console.log(dog.name);
+console.log(dog.age);
 
-console.log(user);
+
+delete dog.age;
+console.log(dog);
