@@ -1,18 +1,10 @@
-const newUser = {
+const user = {
     name: 'Zhenia',
     age: 25,
 
-    bike: {
-        brand: 'Dolan',
-        color: 'Grey',
-        year: 2018,
-
-        sound () {
-            console.log('ding ding ding');
-        }
-    }
 }
 
+user.country = 'Białoruś';
+user['fav-color'] = 'black';
 
-
-console.log(`${newUser.name} jezdzi rowerem marki ${newUser.bike.brand} :P`);
+console.log(user);
