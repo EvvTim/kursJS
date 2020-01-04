@@ -1,18 +1,14 @@
-// konstrukror
-
-function User(name, age) {
-    this.name = name;
-    this.age = age;
-
-    // this.hello = function () {
-    //     console.log(`Użytkownik ma na imię ${this.name} i ma ${this.age} lat`);
+function User(number) {
+    this.rNumber = number;
+    // this.test = function () {
+    //     console.log(`Metoda w obiekcie`);
     // }
 }
 
-User.prototype.hello = function () {
-    console.log(`Użytkownik ma na imię ${this.name} i ma ${this.age} lat`);
+User.prototype.test = function () {
+    console.log(`Jestem poza OBIEKTEM!`);
 }
 
-const newUser = new User('Zhenia', 25);
+const newUser = new User(67563);
 
-newUser.hello()
+console.log(newUser.test());
