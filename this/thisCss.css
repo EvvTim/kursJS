@@ -46,6 +46,10 @@ a:after {
     transition: .4s;
 }
 
+.button-container {
+    width: 400px;
+}
+
 .button-container a:hover:after {
     border-color: #f1c40f;
     width: calc(100% - 10px);
