@@ -1,18 +1,32 @@
-// funkcja.call(OBIEKT, ARGUMENTY);
+// // funkcja.call(OBIEKT, ARGUMENTY)
 
-// function test() {
-//     console.log('test');
+// const movie = {
+//     title: 'The Shining',
+//     test: 'test',
 // }
 
-// test.call();
 
-const movie = {
+// const showMovie = function(price, cinema) {
+//     console.log(`Film: "${this.title}", bilet: ${price}zł, kino: ${cinema}`);
+// }
 
-    title: 'The Shining'
+// showMovie.call(movie, 20, 'Kino')
+
+function Movie(title, year) {
+    this.title = title;
+    this.year = year;
+};
+
+function ActionMovie(title, year) {
+
+    Movie.call(this, title, year);
+
+    this.category = 'Acja';
+
+    console.log(`"${this.title}", rok ${this.year}, kategoria: ${this.category}`);
+
+
 }
 
-const showMovie = function(price, cinema) {
-    console.log(`Film: "${this.title}", bilet: ${price}zł, kino: ${cinema}`);
-}
+const newMovie = new ActionMovie('dfdfd',34);
 
-showMovie.call(movie, 23, 'Super KINO');
