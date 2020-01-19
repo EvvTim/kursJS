@@ -18,22 +18,72 @@ let url;
 const getWeather = () => {
 
     // city = input.value;
-    city = 'Warsaw';
+    city = 'Wroclaw';
 
     url = apiLink + city + apiKey + units;
     axios.get(url)
         .then(res => {
             const temp = res.data.main.temp;
             const hum = res.data.main.humidity;
+            const status = Object.assign({}, ...res.data.weather);
+            const weatherID = status.id;
+
+            const thunderstormImg = '/WeatherApp/WeatherApp grafiki/thunderstorm.png';
+            const drizzleImg = '/WeatherApp/WeatherApp grafiki/drizzle.png';
+            const rainImg = '/WeatherApp/WeatherApp grafiki/rain.png';
+            const snowImg = '/WeatherApp/WeatherApp grafiki/ice.png';
+            const cloudImg = '/WeatherApp/WeatherApp grafiki/cloud.png';
+            const fogImg = '/WeatherApp/WeatherApp grafiki/fog.png';
+            const sunImg = '/WeatherApp/WeatherApp grafiki/sun.png';
+            const unknownImg = '/WeatherApp/WeatherApp grafiki/unknown.png'
+
 
             cityName.textContent = res.data.name;
             temperature.textContent = `${Math.floor(temp)}°C`;
             humidity.textContent = `${hum}%`;
+            weather.textContent = status.main;
 
+
+            if (weatherID >= 200 && weatherID < 300) {
+
+                photo.setAttribute('src', thunderstormImg)
+
+            } else if (weatherID >= 300 && weatherID < 500) {
+
+                photo.setAttribute('src', drizzleImg)
+
+            } else if (weatherID >= 500 && weatherID < 600) {
+
+                photo.setAttribute('src', rainImg)
+
+            } else if (weatherID >= 600 && weatherID < 701) {
+
+                photo.setAttribute('src', snowImg)
+
+            } else if (weatherID >= 801 && weatherID < 900) {
+
+                photo.setAttribute('src', cloudImg)
+
+            } else if (weatherID >= 701 && weatherID < 800) {
+
+                photo.setAttribute('src', fogImg)
+
+            } else if (weatherID === 800) {
+
+                photo.setAttribute('src', sunImg)
+
+            } else {
+
+                photo.setAttribute('src', unknownImg)
+
+            }
             console.log(`City: ${city}`);
             console.log(`Temperature: ${temp}`);
             console.log(`Humidity: ${hum}`);
+            console.log(res.data.weather);
+            console.log(weatherID);
         })
 }
 
 getWeather();
+console.log(photo);
